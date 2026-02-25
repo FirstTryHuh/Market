@@ -1,0 +1,76 @@
+.logo{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
+.middle{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+.OneLine{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.icon{
+ width: 30px;
+ height: 30px;
+}
+.spin{
+    padding-left: 1em;
+    display: flex;
+    gap: 1em;
+    animation: Turn 15s infinite linear;
+}
+.spin2{
+    margin-top: 15px;
+    width: 100px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px -4px 0 rgb(244, 211, 176),
+                8px -8px 0 rgb(244, 171, 169);
+}
+:hover.spin2{
+    animation: expand 0.3s forwards;
+}
+@keyframes expand{
+    from{box-shadow: 4px -4px 0 rgb(244, 211, 176),
+                8px -8px 0 rgb(244, 171, 169);
+}
+    to{box-shadow: 6px -6px 0 rgb(244, 211, 176),
+                12px -12px 0 rgb(244, 171, 169);
+}
+}
+@keyframes Turn{
+    from{translate: 0;}
+    to{translate: -100%;}
+}
+
+.Blur{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(to right, white 80px, transparent);
+}
+.Blur2{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(to left, white 80px, transparent);
+}
