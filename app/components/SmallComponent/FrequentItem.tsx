@@ -1,16 +1,6 @@
 "use client"
-
-import * as React from "react"
+import style from "../css/Product.module.css"
 import Link from "next/link"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "./navigation-menu"
 
 const FrequentItem = () => {
     const List=[
@@ -46,15 +36,17 @@ const FrequentItem = () => {
 "Office Supplies",
 "Musical Instruments",
 "Coupons"]
-    function MakeItem(props:{href:String}){
-        return<div className="flex p-2 text-sm leading-none"><Link href={"/product/"+props.href}><NavigationMenuItem>{props.href}</NavigationMenuItem></Link></div>
+    function MakeItem(props:{href:string}){
+        return <div className={style.item}><Link href={"/product/"+props.href}>{props.href}</Link></div>
     }
   return (
-    <NavigationMenu>
-            <NavigationMenuList>
-                {List.map((item,index)=><MakeItem key={index} href={item}/>)}
-            </NavigationMenuList>
-    </NavigationMenu>
+    <div className={style.frequentWrapper}>
+      <div className={style.Blur}></div>
+      <div className={style.holder}>
+        {List.map((item,index)=><MakeItem key={index} href={item}/>)}
+      </div>
+      <div className={style.Blur2}></div>
+    </div>
   )
 }
 

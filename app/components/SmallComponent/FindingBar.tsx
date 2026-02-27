@@ -2,10 +2,10 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-const FindingBar = (props:{home:boolean}) => {
+export default function FindingBar(props:{home:boolean}){
     const [Find,SetFind]=useState("")
     if(props.home){
-        return 
+        return ;
     }else{
     return (
         <div className='flex items-center border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all h-10 w-90 overflow-hidden'>
@@ -16,5 +16,3 @@ const FindingBar = (props:{home:boolean}) => {
         </div>
     )}
 }
-
-export default FindingBar

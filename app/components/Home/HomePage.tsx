@@ -38,7 +38,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className={style.item}>
-          <img style={{position:"relative", top:"-90px",left:"-30px"}} src="/ChatGPT Image Feb 24, 2026, 02_28_07 PM.png" />
+          <img style={{width:"100vw",height:"90vh",position:"relative", top:"-90px",left:"-30px"}} src="/ChatGPT Image Feb 24, 2026, 02_28_07 PM.png" />
         </div>
       </div>
     </div>
