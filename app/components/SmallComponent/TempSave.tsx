@@ -2,7 +2,7 @@ import style from "../css/Detail.module.css"
 import TestingList from "./Details"
 
 const Detail = () => {
-  function MakeSmallWindow(props:Record<string,string>){
+  function MakeSmallWindow(props:typeof TestingList[0]){
     return(
       <div className={style.Grid}>
         <div className={`${style.Img} ${style.First}`}><img className="w-full" src={props.img} alt="" /></div>
@@ -12,7 +12,7 @@ const Detail = () => {
         <div className={`${style.name} ${style.Middle}`}>{props.name}</div>
         <a href="seller" className={`${style.author} ${style.Middle}`}>{props.author}</a>
         <div className={`${style.like} ${style.Middle}`}>like</div>
-        <div className={`${style.likes} ${style.Middle}`}>{props.likes}</div>
+        <div className={`${style.likes} ${style.Middle}`}>{props.like}</div>
 
         <div className={`${style.Bor} ${style.Middle}`}/>
 

@@ -35,7 +35,7 @@ export default function Detail({num}:{num:number}):JSX.Element{
           <div className={style.cost}><div className=" font-light text-gray-500">VND </div>{props.cost}đ
           <Heart/>
           </div> 
-          <div className="flex items-center border-b-gray-800 border-b-1 pb-4">Quantity: <input className={style.quantity} type="text" placeholder="    1"></input> <div className={style.quantity2}> Only {props.quantity} available</div></div> 
+          <div className="flex items-center border-b-gray-800 border-b pb-4">Quantity: <input className={style.quantity} type="text" placeholder="    1"></input> <div className={style.quantity2}> Only {props.quantity} available</div></div> 
           <div className={style.buyNow}>Buy now</div>
           <div className={style.addToCart}>Add to cart</div>
       </div>
