@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Head/>
       <HomePage/>
-      <Product/>
+      <Product Name=""/>
       <Foot/>
     </div>
   );

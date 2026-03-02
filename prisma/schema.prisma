@@ -15,6 +15,7 @@ datasource db {
 
 model List {
   id          Int    @id @default(autoincrement())
+  AuthorId    Int
   img         String
   imgset      String
   name        String
@@ -26,4 +27,13 @@ model List {
   cost        String
   quantity    String
   productInfo String
+  user        User   @relation(fields: [AuthorId], references: [id])
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  Username String
+  Password String
+  posts    List[]
 }

@@ -1,50 +1,26 @@
-
+import {prisma} from "@/lib/db"
 import Link from "next/link";
 import style from "../css/Product.module.css"
-const formatCompact = (number:any) => {
-  return new Intl.NumberFormat('en-US', {
-    notation: "compact",
-    compactDisplay: "short",
-    maximumFractionDigits: 1 // Optional: 7000 -> 7k, 7500 -> 7.5k
-  }).format(number).toLowerCase(); // lowerCase to get 'k' instead of 'K'
-};
 
-const Description = () => {
-  const TestingList=[{
-    id:0,
-    img:"https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=400x300&vertical=center",
-    imgset:"https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=320x240&vertical=center 320w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=400x300&vertical=center 400w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=450x338&vertical=center 450w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=640x480&vertical=center 640w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=700x525&vertical=center 700w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=800x600&vertical=center 800w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=840x630&vertical=center 840w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=1000x750&vertical=center 1000w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=1200x900&vertical=center 1200w",
-    name:"Style Exploration #4 airplane ariport booking branding hotel illustration luggage travel vacation",
-    author:"Julian Burford",
-    authorImg:"https://cdn.dribbble.com/users/19849/avatars/small/b9d66b328b98675741787e00bdf56375.png?1733740394",
-    save:"10",
-    like:"59",
-    seen:"7000",
-    cost:"1000000",
-    quantity:"1",
-    productInfo:"Just a web",
-  },{
-    id:1,
-    img:"https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=400x300&vertical=center",
-    imgset:"https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=320x240&vertical=center 320w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=400x300&vertical=center 400w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=450x338&vertical=center 450w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=640x480&vertical=center 640w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=700x525&vertical=center 700w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=800x600&vertical=center 800w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=840x630&vertical=center 840w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=1000x750&vertical=center 1000w, https://cdn.dribbble.com/userupload/46850869/file/cb44d7e9667ebd005db8b985a95cbe0c.png?format=webp&resize=1200x900&vertical=center 1200w",
-    name:"Style Exploration #4 airplane ariport booking branding hotel illustration luggage travel vacation",
-    author:"Julian Burford",
-    authorImg:"https://cdn.dribbble.com/users/19849/avatars/small/b9d66b328b98675741787e00bdf56375.png?1733740394",
-    save:"10",
-    like:"59",
-    seen:"7000",
-    cost:"1000000",
-    quantity:"1",
-    productInfo:"Just a web",
-  }]
-  function MakeSmallWindow(props: typeof TestingList[0]){
+const formatCompact = (number:any) => { return new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short", maximumFractionDigits: 1 }).format(number).toLowerCase(); };
+
+interface List { id: number; img: string; imgset: string; name: string; author: string; authorImg: string; save: string; like: string; seen: string; cost: string; quantity: string; productInfo: string; }
+
+export default async function Description(props:{Name:string}){
+  let TestingList;
+  if(props.Name.length===0){
+    TestingList=await prisma.list.findMany()
+  }else{
+    TestingList=await prisma.list.findMany({where:{name:{startsWith:props.Name, mode: 'insensitive'}}})
+  }
+  function MakeSmallWindow(props:List){
     
     return(
       <Link href={"/product/"+String(props.id)}>
       <div className={style.BigWindow}>
         <div className={style.Window}>
             <div className={style.Gridd}>
-              <a href={style.img} className={style.Mask} >
+              <div className={style.Mask} >
               <div className={style.Mask2}>
                 <div className={style.textss}>{(()=>{return props.name.substring(0,20)})()+"..."}</div>
                 <div className="flex">
@@ -56,7 +32,7 @@ const Description = () => {
                   </div>
                 </div>
               </div>
-              </a>
+              </div>
               <img className={style.image} srcSet={props.imgset} src={props.img}  alt="" />
             </div>
         </div>
@@ -88,5 +64,3 @@ const Description = () => {
     </div>
   )
 }
-
-export default Description

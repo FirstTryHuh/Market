@@ -2,6 +2,7 @@
 import { useState } from "react"
 import style from "../css/Home.module.css"
 import FindingBar from "../SmallComponent/FindingBar"
+import Link from "next/link"
 const HomePage = () => {
   const [mouse,SetMouse]=useState({
     targetX:0,
@@ -30,15 +31,15 @@ const HomePage = () => {
             <FindingBar home={false}/>
             <form className="flex gap-1 mt-4" action="submit">
               <div style={{fontWeight:"700",paddingRight:"1rem"}}>Popular</div>
-              <button className={style.buttons}>shoes</button>
-              <button className={style.buttons}>skateboard</button>
-              <button className={style.buttons}>computer</button>
-              <button className={style.buttons}>dress</button>
+              <Link href={"/search/"+"shoes"}><button className={style.buttons}>shoes</button></Link>
+              <Link href={"/search/"+"skateboard"}><button className={style.buttons}>skateboard</button></Link>
+              <Link href={"/search/"+"computer"}><button className={style.buttons}>computer</button></Link>
+              <Link href={"/search/"+"dress"}><button className={style.buttons}>dress</button></Link>
             </form>
           </div>
         </div>
-        <div className={style.item}>
-          <img style={{width:"100vw",height:"90vh",position:"relative", top:"-90px",left:"-30px"}} src="/BackGroundImg.png" />
+        <div className={style.item2}>
+          <img className={style.Back} src="/BackGroundImg.png" />
         </div>
       </div>
     </div>

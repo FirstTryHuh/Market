@@ -37,7 +37,7 @@ const FrequentItem = () => {
 "Musical Instruments",
 "Coupons"]
     function MakeItem(props:{href:string}){
-        return <div className={style.item}><Link href={"/product/"+props.href}>{props.href}</Link></div>
+        return <div className={style.item}><Link href={"/search/"+props.href}>{props.href}</Link></div>
     }
   return (
     <div className={style.frequentWrapper}>

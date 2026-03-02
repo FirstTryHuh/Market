@@ -1,0 +1,144 @@
+.Body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.Gridd {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 100vh;
+}
+.MainScreen {
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 100px 1fr;
+}
+.icon {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+    z-index: 1;
+}
+.FormSection {
+    z-index: 0;
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slidein 0.25s linear forwards;
+}
+.Form {
+    width: 340px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+.SideScreen {
+    grid-column: 2;
+    overflow: hidden;
+    width: 30vw;
+    height: 100vh;
+}
+.SideScreen video {
+    object-fit: cover;
+}
+.Svg {
+    width: 64px;
+    height: 64px;
+}
+.title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+.googleBtn {
+    width: 100%;
+    padding: 0.6rem 4rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.googleBtn:hover {
+    background: #f9fafb;
+}
+.divider {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+.input {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.input:focus {
+    border-color: #f97316;
+}
+.submitBtn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.submitBtn:hover {
+    background: #ea6c0a;
+}
+.terms {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    text-align: center;
+    line-height: 1.4;
+}
+.link {
+    color: #f97316;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+    .SideScreen {
+        display: none;
+    }
+    .MainScreen {
+        grid-column: 1 / 3;
+    }
+}
+
+@keyframes slidein{
+    from{
+        opacity: 50%;
+        margin-left: 30px;
+    }
+    to{
+        opacity: 100%;
+        margin-left: 0px;
+    }
+}

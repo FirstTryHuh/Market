@@ -5,14 +5,13 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from "@/app/components/SmallComponent/navigation-menu"
-import Link from "next/link"
 import ListHead from "./ListHead"
 
 const Navigation = () => {
     function MakeHead(item:{href:string,text:string}){
     return(
-    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-        <Link href={item.href}>{item.text}</Link>
+    <NavigationMenuLink href={item.href} className={navigationMenuTriggerStyle()}>
+        {item.text}
     </NavigationMenuLink>
 )}
 

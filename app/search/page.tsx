@@ -8,7 +8,7 @@ const UserPage=async()=>{
     return(
         <div>
             <Head/>
-            <Product/>
+            <Product Name={""}/>
             <Foot/>
         </div>
     )
