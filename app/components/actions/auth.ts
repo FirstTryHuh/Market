@@ -1,5 +1,4 @@
 'use server'
-import { Prisma__UserClient } from './../../../lib/generated/prisma/models/User';
 import { signIn,signOut } from "@/auth"
 import { prisma } from "@/lib/db";
 import bcrypt from "bcrypt"
@@ -38,7 +37,9 @@ export async function Register(formData:FormData):Promise<[number,string]>{
     const User=await prisma.user.create({data:{
         name:username,
         Username:username,
-        Password:hash,}
+        Password:hash,
+        Description:"",
+        Location:"",}
     })
     return [3,"Account has been registed"]
 }
