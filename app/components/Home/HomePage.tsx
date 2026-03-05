@@ -9,11 +9,9 @@ const HomePage = () => {
     targetY:0,
   })
   return (
-    <div onMouseMove={((event)=>{SetMouse({
-        targetX:event.clientX,
-        targetY:event.clientY,
-      })})}>
-      <div style={{position:"fixed",
+    < >
+      <div 
+    style={{position:"fixed",
     inset: "0",
     zIndex: -1,
     backgroundImage: `radial-gradient(circle, orange 1px, transparent 1px)`,
@@ -21,7 +19,10 @@ const HomePage = () => {
     maskImage: `radial-gradient(200px circle at ${mouse.targetX}px ${mouse.targetY}px, black, transparent)`,
     WebkitMaskImage: `radial-gradient(200px circle at ${mouse.targetX}px ${mouse.targetY}px, black, transparent)`,
 }} />
-      <div className={style.Table}>
+      <div onMouseMove={((event)=>{SetMouse({
+        targetX:event.clientX,
+        targetY:event.clientY,
+      })})} className={style.Table}>
         <div className={style.item}>
           <div className={style.Hold}>
             <div className={style.FlexSm}>
@@ -42,7 +43,7 @@ const HomePage = () => {
           <img className={style.Back} src="/BackGroundImg.png" />
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
