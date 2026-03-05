@@ -6,6 +6,7 @@ import { prisma } from "./lib/db";
 import { generateAccessToken, generateRefreshToken, getRefreshExpiry } from "./lib/tokens";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    trustHost: true,
     session: {
         strategy: "jwt",
         maxAge: 7 * 24 * 60 * 60,
