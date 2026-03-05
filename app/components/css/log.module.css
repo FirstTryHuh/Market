@@ -50,10 +50,11 @@
 .SideScreen {
     grid-column: 2;
     overflow: hidden;
-    width: 350px;
-    height: 100vh;
+    width: auto;
+    height: 100%;
 }
 .SideScreen video {
+    height: 100vh;
     object-fit: cover;
 }
 .Svg {
