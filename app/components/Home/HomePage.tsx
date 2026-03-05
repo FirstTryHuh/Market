@@ -27,11 +27,11 @@ const HomePage = () => {
           <div className={style.Hold}>
             <div className={style.FlexSm}>
               <div className={style.Head}>Your next favorite thing is just a search away</div>
-              <div style={{fontSize:"1rem"}}>Ready to buy? Or just browsing for inspiration? Either way, drop what you're looking for into the search bar and let's go.</div>
+              <div style={{fontSize:"1.3rem"}}>Ready to buy? Or just browsing for inspiration? Either way, drop what you're looking for into the search bar and let's go.</div>
             </div>
             <FindingBar home={false}/>
             <form className="flex gap-1 mt-4" action="submit">
-              <div style={{fontWeight:"700",paddingRight:"1.4rem"}}>Popular</div>
+              <div style={{fontWeight:"700",paddingRight:"1.8rem"}}>Popular</div>
               <Link href={"/search/"+"shoes"}><button className={style.buttons}>shoes</button></Link>
               <Link href={"/search/"+"skateboard"}><button className={style.buttons}>skateboard</button></Link>
               <Link href={"/search/"+"computer"}><button className={style.buttons}>computer</button></Link>
