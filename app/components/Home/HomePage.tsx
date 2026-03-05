@@ -23,7 +23,7 @@ const HomePage = () => {
 }} />
       <div className={style.Table}>
         <div className={style.item}>
-          <div style={{width:"85%",top:"0",padding:"1rem"}}>
+          <div className={style.Hold}>
             <div className={style.FlexSm}>
               <div className={style.Head}>Your next favorite thing is just a search away</div>
               <div style={{fontSize:"0.7rem"}}>Ready to buy? Or just browsing for inspiration? Either way, drop what you're looking for into the search bar and let's go.</div>
