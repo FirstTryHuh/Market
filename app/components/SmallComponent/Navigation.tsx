@@ -16,9 +16,9 @@ const Navigation = () => {
 )}
 
   return (
-  <NavigationMenu ><NavigationMenuList><NavigationMenuItem>
-    {ListHead.map((item,index)=><MakeHead {...item} key={index}/>)}
-</NavigationMenuItem></NavigationMenuList></NavigationMenu>
+  <NavigationMenu><NavigationMenuList>
+    {ListHead.map((item,index)=><NavigationMenuItem key={index}><MakeHead {...item}/></NavigationMenuItem>)}
+  </NavigationMenuList></NavigationMenu>
   )
 }
 

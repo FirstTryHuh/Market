@@ -16,8 +16,7 @@ export default async function Description(props:{Name:string}){
   function MakeSmallWindow(props:List){
     
     return(
-      <Link href={"/product/"+String(props.id)}>
-      <div className={style.BigWindow}>
+      <Link className={style.BigWindow} href={"/product/"+String(props.id)}>
         <div className={style.Window}>
             <div className={style.Gridd}>
               <div className={style.Mask} >
@@ -36,7 +35,7 @@ export default async function Description(props:{Name:string}){
               <img className={style.image} srcSet={props.imgset} src={props.img}  alt="" />
             </div>
         </div>
-        <div className="flex justify-between w-12/12">
+        <div className="flex justify-between items-center w-12/12 h-4 overflow-hidden text-nowrap">
           <div className={style.textss}>{props.author}</div>
         <div className="flex">
             <button>
@@ -54,7 +53,6 @@ export default async function Description(props:{Name:string}){
             <div className={style.textss}>{formatCompact(Number(props.seen))}</div>
           </div>
         </div>
-      </div>
       </Link>
     )
   }

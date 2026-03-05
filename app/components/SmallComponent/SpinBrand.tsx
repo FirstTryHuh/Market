@@ -8,7 +8,8 @@ const SpinBrand = () => {
         )
     }
   return (
-    <div className="relative overflow-hidden">
+    <div className="mt-4">
+    <div className="relative overflow-hidden ">
         <div className="flex h-25">
             <div className={style.spin}>
                 {FootList.map(GenImg)}
@@ -22,6 +23,7 @@ const SpinBrand = () => {
         </div>
         <div className={style.Blur}/>
         <div className={style.Blur2}/>
+    </div>
     </div>
   )
 }

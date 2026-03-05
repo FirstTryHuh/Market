@@ -6,14 +6,16 @@ import Description from "../SmallComponent/Description"
 
 const Product = (props:{Name:string}) => {
   return (
-    <div className="bg-white border-t-1 border-gray-300 pt-3">
+    <div className="bg-white pt-3 ">
       <div className={style.Hold}>
-        <div className={style.holder2}>
-          <DropDown/>
-          <FrequentItem/>
-        </div>
-        <div className={style.holder3}>
-          <Description Name={props.Name}/>
+        <div className="overflow-hidden w-11/12 col-end-3">
+          <div className={style.holder2}>
+            <DropDown/>
+            <FrequentItem/>
+          </div>
+          <div className={style.holder3}>
+            <Description Name={props.Name}/>
+          </div>
         </div>
       </div>
     </div>

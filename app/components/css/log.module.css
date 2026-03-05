@@ -50,7 +50,7 @@
 .SideScreen {
     grid-column: 2;
     overflow: hidden;
-    width: 30vw;
+    width: 350px;
     height: 100vh;
 }
 .SideScreen video {
@@ -121,6 +121,13 @@
     font-weight: 500;
     text-decoration: underline;
     cursor: pointer;
+}
+.error{
+    text-align: center;
+    font-size: small;
+    line-height: 1;
+    color: red;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 780px) {

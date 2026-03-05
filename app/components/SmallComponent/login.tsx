@@ -1,19 +1,29 @@
 'use client'
-import { handleSignOut,handleSignInGoogle, handleSignInCredential } from "../actions/auth"
-import React, { Dispatch,SetStateAction } from "react"
+import { handleSignInGoogle, handleSignInCredential } from "../actions/auth"
+import { Dispatch, SetStateAction, useEffect } from "react"
 import Link from "next/link"
 import style from "../css/log.module.css"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 
-
-interface props{
+interface props {
     SetSigned: Dispatch<SetStateAction<boolean>>,
 }
-export default function Login(props:props): React.JSX.Element {
-    const {data:session}=useSession(); 
-    const router=useRouter();
-    if(session){router.replace("/")}
+export default function Login(props: props) {
+    const { data: session, update } = useSession();
+    const router = useRouter();
+
+    async function SignInCredential(formData: FormData) {
+        const res = await handleSignInCredential(formData);
+        if (res?.error) {
+            console.error(res.error);
+        } else {
+            await update();
+            router.push("/");
+        }
+    }
+
+    useEffect(() => { if (session) router.replace("/") }, [session])
     return (
         <>
             <div className={style.icon}>
@@ -29,9 +39,9 @@ export default function Login(props:props): React.JSX.Element {
                         <button type="submit" className={style.googleBtn}>Continue with Google</button>
                     </form>
                     <div className={style.divider}>or</div>
-                    <form action={handleSignInCredential}>
-                        <input className={style.input} type="email" placeholder="Email address" />
-                        <input className={style.input} type="password" placeholder="Password" />
+                    <form action={SignInCredential}>
+                        <input className={style.input} type="text" name="email" placeholder="Username" />
+                        <input className={style.input} type="password" name="password" placeholder="Password" />
                         <button type="submit" className={style.submitBtn}>Continue</button>
                     </form>
                     <div className={style.terms}>By continuing, you agree to our Terms and Privacy Policy.</div>

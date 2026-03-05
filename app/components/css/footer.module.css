@@ -74,3 +74,12 @@
     height: 100%;
     background: linear-gradient(to left, white 80px, transparent);
 }
+.terms{
+    margin: 20px 30px;
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+    color: rgb(184, 184, 184);
+}
+.Footer{
+    width: 95vw;
+}

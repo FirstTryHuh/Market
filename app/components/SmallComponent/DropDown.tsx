@@ -16,7 +16,7 @@ export function DropDown() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-            <div className="min-w-full border-2 rounded-md">
+            <div className="min-w-full border-2 rounded-md h-10">
             <NavigationMenuTrigger><div className="w-21">Popular</div></NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="flex flex-col w-30">

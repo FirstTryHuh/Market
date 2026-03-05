@@ -1,12 +1,11 @@
 'use server'
-
+import { Prisma__UserClient } from './../../../lib/generated/prisma/models/User';
 import { signIn,signOut } from "@/auth"
 import { prisma } from "@/lib/db";
 import bcrypt from "bcrypt"
 
-
 export async function handleSignOut() {
-    await signOut()
+    await signOut({ redirectTo: '/' })
 }
 
 export async function handleSignInGoogle() {
@@ -23,9 +22,9 @@ export async function handleSignInCredential(formData:FormData) {
     }catch(error){
         throw new Error(error instanceof Error?error.message:String(error))
     }
+    
 }
 export async function Register(formData:FormData):Promise<[number,string]>{
-    'use server'
     const Saltround=10;
 
     const username= String(formData.get('username'));
@@ -36,15 +35,14 @@ export async function Register(formData:FormData):Promise<[number,string]>{
     if(password.length<8){return [2,"password need to be atleast 8 digit long"]}
 
     const hash=await bcrypt.hash(password,Saltround) 
-    await prisma.user.create({data:{
+    const User=await prisma.user.create({data:{
         name:username,
         Username:username,
         Password:hash,}
-})
+    })
     return [3,"Account has been registed"]
 }
 
 export async function changeName({Name,Id}:{Name:string,Id:number}) {
-    'use server'
     await prisma.user.update({where:{id:Id},data:{name:Name}})
 }

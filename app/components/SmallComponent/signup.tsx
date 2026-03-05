@@ -24,14 +24,14 @@ export default function Signup(props:props):React.JSX.Element{
                     <div className={style.title}>Welcome to Crip</div>
                     <div className="text-center leading-5">Create your account and discover world-class model.</div>
                     <form action={handleSignInGoogle}>
-                        <button type="button" className={style.googleBtn}>Continue with Google</button>
+                        <button type="submit" className={style.googleBtn}>Continue with Google</button>
                     </form>
                     <div className={style.divider}>or</div>
                     <form action={async (formData) => {
                         const res = await Register(formData);
                         setResult(res);
                         if(res[0] === 3){
-                            router.replace("/");
+                            router.replace("/new");
                         }
                         }}>
                         <input className={style.input} type="text" name="username" placeholder="Username" />

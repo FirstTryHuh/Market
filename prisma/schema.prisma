@@ -31,9 +31,21 @@ model List {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  name     String
-  Username String
-  Password String
-  posts    List[]
+  id            Int            @id @default(autoincrement())
+  name          String
+  Username      String
+  Description   String
+  Location      String
+  Password      String
+  posts         List[]
+  refreshTokens RefreshToken[]
 }
+
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  userId    Int
+  expiresAt DateTime
+  User      User     @relation(fields: [userId], references: [id])
+}
+
