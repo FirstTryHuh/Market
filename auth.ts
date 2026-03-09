@@ -69,11 +69,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return token;
         },
         async session({ session, token }) {
-            session.user.id = token.id as string;
-            session.user.accessToken = token.accessToken as string;
-            session.user.refreshToken = token.refreshToken as string;
-            session.user.description = token.description as string;
-            session.user.location = token.location as string;
+            session.user.id = token.id as number;
             return session;
         }
     }

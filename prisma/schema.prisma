@@ -21,17 +21,17 @@ model List {
   name        String
   author      String
   authorImg   String
-  save        String
-  like        String
-  seen        String
-  cost        String
-  quantity    String
+  like        Int
+  seen        Int
+  cost        Int
+  quantity    Int
   productInfo String
   user        User   @relation(fields: [AuthorId], references: [id])
 }
 
 model User {
   id            Int            @id @default(autoincrement())
+  img           String
   name          String
   Username      String
   Description   String
@@ -48,4 +48,3 @@ model RefreshToken {
   expiresAt DateTime
   User      User     @relation(fields: [userId], references: [id])
 }
-

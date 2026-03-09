@@ -2,9 +2,12 @@ import type { NextAuthConfig } from "next-auth";
 import Google from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
 
-const publicRoutes = ["/new", "/api/auth"];
+const protectedRoutes = ["/user"];
 
 export const authConfig: NextAuthConfig = {
+    pages:{
+        signIn:"/new",
+    },
     providers: [
         Google({
             clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -15,8 +18,8 @@ export const authConfig: NextAuthConfig = {
     callbacks: {
         authorized({ auth, request }) {
             const { pathname } = request.nextUrl;
-            const isPublic = publicRoutes.some(r => pathname.startsWith(r));
-            if (!auth && !isPublic) return false;
+            const isProtected = protectedRoutes.some(r => pathname.startsWith(r));
+            if (!auth && isProtected) return false;
             return true;
         },
     },

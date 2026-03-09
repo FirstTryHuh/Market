@@ -38,6 +38,7 @@ export async function Register(formData:FormData):Promise<[number,string]>{
         name:username,
         Username:username,
         Password:hash,
+        img:"/user.png",
         Description:"",
         Location:"",}
     })

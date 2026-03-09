@@ -214,7 +214,7 @@
 
 .Posts {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, 40%);
     gap: 1rem;
 }
 
@@ -260,4 +260,91 @@
 /* Footer row */
 .Footer {
     grid-column: 1 / -1;
+}
+/* recent post */
+.PostWindow{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 7px;
+    cursor: pointer;
+    overflow: hidden;
+} 
+.name{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    font-weight: 700;
+    font-size: 20px;
+}
+.cost{
+    grid-row: 1/2;
+    grid-column: 3/4;
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: 700;
+}
+.quantity{
+    width: 100%;
+    height: 100%;
+    grid-row: 3/4;
+    grid-column: 1/2;
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+}
+.likeHold{
+    width: 100%;
+    height: 100%;
+    grid-row: 3/4;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    gap: 4px;
+}
+.like{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: right;
+    align-items: center;
+    border: 1.5px solid rgb(143, 143, 143);
+    border-radius: 20px;
+    background-color: rgb(254, 233, 195);
+    overflow: hidden;
+}
+.likeNumber{
+    font-size: 15px;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.likeImage{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #f1bc8a;
+}
+.like:hover .likeNumber{
+    animation: show 0.3s ease-in-out forwards;
+}
+@keyframes show{
+    from{
+        width: 0%;
+        height: 0%;
+        visibility: hidden;
+    }
+    to{
+        padding-left: 5px;
+        padding-right: 2px;
+        width: 100%;
+        height: 100%;
+        visibility: visible;
+    }
 }
