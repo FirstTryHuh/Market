@@ -1,4 +1,4 @@
-.item{
+.item {
     margin-left: 10px;
     font-weight: 700;
     font-size: 15px;
@@ -7,30 +7,36 @@
     white-space: nowrap;
     padding: 0.3rem;
     line-height: 1;
-    font-size: var(--text-sm) /* 0.875rem = 14px */;
-    line-height: var(--tw-leading, var(--text-sm--line-height) /* calc(1.25 / 0.875) ≈ 1.428571 */);
+    font-size: var(--text-sm)
+        /* 0.875rem = 14px */
+    ;
+    line-height: var(--tw-leading, var(--text-sm--line-height)
+            /* calc(1.25 / 0.875) ≈ 1.428571 */
+        );
 }
-:hover.item{
+
+:hover.item {
     color: #ecebeb;
     background-color: rgb(70, 62, 62);
 }
 
-.frequentWrapper{
+.frequentWrapper {
     position: relative;
     flex: 1;
     overflow: hidden;
 }
 
-.holder{
+.holder {
     display: flex;
     width: 100%;
     overflow-x: scroll;
+
     &::-webkit-scrollbar {
-    display: none;
-  }
+        display: none;
+    }
 }
 
-.Blur{
+.Blur {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -40,7 +46,7 @@
     background: linear-gradient(to right, white 80px, transparent);
 }
 
-.Blur2{
+.Blur2 {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -50,32 +56,35 @@
     background: linear-gradient(to left, white 80px, transparent);
 }
 
-.holder2{
+.holder2 {
     display: flex;
-    flex:1;
+    flex: 1;
     grid-column: 2;
     width: 100%;
 }
 
-.Hold{
+.Hold {
     width: 100vw;
     display: grid;
     grid-template-columns: 70px 1fr auto;
     grid-template-rows: auto;
 }
-.holder3{
+
+.holder3 {
     width: 93vw;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
 }
-.Window{
+
+.Window {
     width: 97%;
     height: 100%;
     border-radius: 7px;
     overflow: hidden;
 }
-.BigWindow{
+
+.BigWindow {
     width: 25%;
     height: 17rem;
     display: grid;
@@ -83,17 +92,21 @@
     grid-template-columns: auto;
     padding: 1rem;
 }
-.Board{
+
+.Board {
     display: flex;
 }
-.icon{
+
+.icon {
     fill: gray;
-    cursor:pointer;
+    cursor: pointer;
 }
-:hover.icon{
-    fill:pink;
+
+:hover.icon {
+    fill: pink;
 }
-.Gridd{
+
+.Gridd {
     cursor: pointer;
     height: 100%;
     width: 100%;
@@ -101,13 +114,15 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.image{
+
+.image {
     height: 14rem;
     width: 100%;
     grid-row: 1 /7;
     grid-column: 1;
 }
-.Mask{
+
+.Mask {
     margin-bottom: 1.9rem;
     z-index: 1;
     color: aliceblue;
@@ -116,21 +131,25 @@
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
+    justify-content: flex-end;
     padding: 8px;
 }
-.Gridd:hover .Mask{
+
+.Gridd:hover .Mask {
     visibility: visible;
-    background: linear-gradient(to bottom,transparent,rgb(67, 65, 65));
+    background: linear-gradient(to bottom, transparent, rgb(67, 65, 65));
 }
-:hover.Window{
-    animation:  Big 0.2s ease-in-out forwards;
+
+:hover.Window {
+    animation: Big 0.2s ease-in-out forwards;
 }
-.Mask2{
+
+.Mask2 {
     display: flex;
     justify-content: space-between;
 }
-.icon2{
+
+.icon2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,28 +160,33 @@
     border-radius: 50%;
     cursor: pointer;
 }
-:hover.icon2{
+
+:hover.icon2 {
     opacity: 80%;
 }
-.textss{
+
+.textss {
     font-size: 14px;
     font-weight: 700;
     margin-right: 5px;
 }
-@media screen and (width<1065){
-    .BigWindow{
+
+@media screen and (width<1065) {
+    .BigWindow {
         width: 33%;
         height: 18rem;
     }
 }
-@keyframes Big{
-    from{
+
+@keyframes Big {
+    from {
         width: 97%;
         height: 100%;
         top: 0;
         left: 0;
     }
-    to{
+
+    to {
         width: 98%;
         height: 101%;
         margin-top: -3px;

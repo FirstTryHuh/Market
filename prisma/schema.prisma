@@ -17,7 +17,7 @@ model List {
   id          Int    @id @default(autoincrement())
   AuthorId    Int
   img         String
-  imgset      String
+  imgPublicId String
   name        String
   author      String
   authorImg   String
@@ -33,12 +33,20 @@ model User {
   id            Int            @id @default(autoincrement())
   img           String
   name          String
+  email         String
   Username      String
   Description   String
   Location      String
   Password      String
   posts         List[]
   refreshTokens RefreshToken[]
+  googleUser    GoogleUser?
+}
+
+model GoogleUser {
+  GoogleId String @id @unique
+  id       Int    @unique
+  user     User   @relation(fields: [id], references: [id])
 }
 
 model RefreshToken {

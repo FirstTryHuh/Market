@@ -1,12 +1,14 @@
-.header{
+.header {
     height: 64px;
 }
-.logo{
+
+.logo {
     width: 80px;
     height: 80px;
     display: inline-block;
 }
-.middle{
+
+.middle {
     width: 100%;
     position: fixed;
     top: 0;
@@ -22,7 +24,7 @@
     border-bottom: 0.4px solid rgb(242, 240, 240);
 }
 
-.OneLine{
+.OneLine {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,18 +32,21 @@
     flex-shrink: 1;
     gap: 8px;
 }
-.icon{
- width: 24px;
- height: 24px;
+
+.icon {
+    width: 24px;
+    height: 24px;
 }
-.user{
+
+.user {
     display: flex;
     gap: 15px;
 }
-.userImg{
-    background: linear-gradient(rgb(210, 218, 218),rgb(210, 218, 218)) padding-box,
-                linear-gradient(to right,rgb(174, 164, 146),rgb(130, 103, 103)) border-box;
-    border:1px solid transparent;
+
+.userImg {
+    background: linear-gradient(rgb(210, 218, 218), rgb(210, 218, 218)) padding-box,
+        linear-gradient(to right, rgb(174, 164, 146), rgb(130, 103, 103)) border-box;
+    border: 1px solid transparent;
     padding: 1px;
     border-radius: 50%;
     width: 27px;

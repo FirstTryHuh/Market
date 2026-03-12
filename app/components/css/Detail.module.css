@@ -1,53 +1,60 @@
-.Grid{
-    background:rgb(248, 248, 248);
+.Grid {
+    background: rgb(248, 248, 248);
     padding-top: 3rem;
     padding-left: 10px;
     width: 100vw;
     display: grid;
-    grid-template-columns: repeat(20,1fr);
-    grid-template-rows:1fr;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: 1fr;
 }
-.Grid>*{
+
+.Grid>* {
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
-.First{
+
+.First {
     grid-column: 3/13;
 }
-.Last{
+
+.Last {
     grid-column: 14/19;
 }
-.name{
+
+.name {
     line-height: 0.9;
     font-size: 1.5rem;
-    font-weight: 500 ;
+    font-weight: 500;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid;
 }
-.Bor{
+
+.Bor {
     border: 1px solid black;
 }
-.cost{
+
+.cost {
     display: flex;
     font-size: 1.5rem;
 }
 
-.quantity{
+.quantity {
     border: 1px solid black;
     height: 2.4rem;
     width: 3rem;
     border-radius: 20%;
 }
-.quantity2{
+
+.quantity2 {
     padding-left: 3px;
     margin-left: 20px;
     opacity: 50%;
-    border-left:1px solid black ;
+    border-left: 1px solid black;
 }
-.buyNow{
+
+.buyNow {
     margin-top: 1rem;
     cursor: pointer;
     height: 40px;
@@ -58,38 +65,44 @@
     align-items: center;
     margin-bottom: 5px;
 }
-:hover.buyNow{
+
+:hover.buyNow {
     background-color: rgb(250, 152, 33);
 }
-.addToCart{
+
+.addToCart {
     cursor: pointer;
     height: 40px;
     padding: 20px;
     border: 2px solid transparent;
-    background:   linear-gradient(white, white) padding-box,
-                    linear-gradient(to right,orange,red) border-box;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, orange, red) border-box;
     border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-:hover.addToCart{
-    background:   
-                    linear-gradient(to right,orange,red) border-box;
+
+:hover.addToCart {
+    background:
+        linear-gradient(to right, orange, red) border-box;
 
 }
-.Img{
+
+.Img {
     display: grid;
     grid-template-columns: 1fr 3rem;
-    grid-template-rows:3rem 1fr ;
+    grid-template-rows: 3rem 1fr;
     width: 100%;
     background: rgb(238, 237, 237);
     border-radius: 20px;
 }
-.Full{
+
+.Full {
     grid-column: 3/19;
 }
-.icon2{
+
+.icon2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +114,8 @@
     border: 1px solid;
     cursor: pointer;
 }
-.icon{
+
+.icon {
     grid-column: 2;
     grid-row: 1;
     z-index: 10;
@@ -118,12 +132,15 @@
     align-self: center;
     justify-self: center;
 }
-.icon:hover{
+
+.icon:hover {
     opacity: 80%;
 }
-:hover.icon2{
+
+:hover.icon2 {
     opacity: 80%;
 }
-.author{
+
+.author {
     font-weight: 600;
 }

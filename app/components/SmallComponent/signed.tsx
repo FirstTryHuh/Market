@@ -5,7 +5,7 @@ import { createContext, Dispatch, SetStateAction, useContext, useState } from "r
 const SignedContext = createContext<{
     signed: boolean;
     SetSigned: Dispatch<SetStateAction<boolean>>;
-}>({ signed: true, SetSigned: () => {} })
+}>({ signed: true, SetSigned: () => { } })
 
 export function SignedProvider({ children }: { children: React.ReactNode }) {
     const [signed, SetSigned] = useState(true)

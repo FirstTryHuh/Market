@@ -16,15 +16,15 @@ export function DropDown() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-            <div className="min-w-full border-2 rounded-md h-10">
+          <div className="min-w-full border-2 rounded-md h-10">
             <NavigationMenuTrigger><div className="w-21">Popular</div></NavigationMenuTrigger>
-                <NavigationMenuContent>
-                    <ul className="flex flex-col w-30">
-                    <ListItem href="/product/popular" title="Popular"/>
-                    <ListItem href="/product/New" title="New & Noteworthy"/>
-                    </ul>
-                </NavigationMenuContent>
-            </div>
+            <NavigationMenuContent>
+              <ul className="flex flex-col w-30">
+                <ListItem href="/product/popular" title="Popular" />
+                <ListItem href="/product/New" title="New & Noteworthy" />
+              </ul>
+            </NavigationMenuContent>
+          </div>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

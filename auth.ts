@@ -52,24 +52,41 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         })
     ],
     callbacks: {
-        async jwt({ token, user, account }) {
-            if (user) {
-                token.id = user.id;
+        async jwt({ token, user, account, profile }) {
+            if (account?.provider === 'google' && profile) {
+                const googleId = profile.sub!;
+                let googleUser = await prisma.googleUser.findFirst({ where: { GoogleId: googleId } });
+                if (!googleUser) {
+                    const newUser = await prisma.user.create({
+                        data: {
+                            name: profile.name ?? '',
+                            email: profile.email ?? '',
+                            Username: '',
+                            Password: '',
+                            img: (profile as any).picture ?? '/user.png',
+                            Description: '',
+                            Location: '',
+                        }
+                    });
+                    googleUser = await prisma.googleUser.create({
+                        data: { GoogleId: googleId, id: newUser.id }
+                    });
+                }
+                token.id = googleId;
+                token.accessToken = account.access_token;
+                token.refreshToken = account.refresh_token;
+            } else if (user) {
+                token.id = String(user.id);
                 token.username = (user as any).Username;
                 token.accessToken = (user as any).accessToken;
                 token.refreshToken = (user as any).refreshToken;
                 token.description = (user as any).Description;
                 token.location = (user as any).Location;
             }
-            // For Google OAuth — store provider tokens
-            if (account?.access_token) {
-                token.accessToken = account.access_token;
-                token.refreshToken = account.refresh_token;
-            }
             return token;
         },
         async session({ session, token }) {
-            session.user.id = token.id as number;
+            session.user.id = String(token.id);
             return session;
         }
     }
