@@ -8,6 +8,16 @@ async function fileToBase64(file: File): Promise<string> {
     return `data:${file.type};base64,${base64}`;
 }
 
+export default async function GetFoot(){
+    const Foot=await prisma.list.findMany({
+    orderBy:{
+        seen:"desc"
+    },
+    take:10,
+})
+    return Foot;
+}
+
 export async function HandleChanges(formData: FormData, id: string) {
     const avatarFile = formData.get('Avatar') as File;
     const avatarBase64 = await fileToBase64(avatarFile);

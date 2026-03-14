@@ -6,7 +6,7 @@ import Description from "../SmallComponent/Description"
 
 const Product = (props:{Name:string}) => {
   return (
-    <div className="bg-white pt-3 ">
+    <div className={style.Back}>
       <div className={style.Hold}>
         <div className="overflow-hidden w-11/12 col-end-3">
           <div className={style.holder2}>
