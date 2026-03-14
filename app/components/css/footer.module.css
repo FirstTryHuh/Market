@@ -27,16 +27,18 @@
 }
 
 .spin {
-    padding-left: 1em;
+    padding-left: 2em;
     display: flex;
-    gap: 1em;
+    gap: 2em;
     animation: Turn 15s infinite linear;
 }
 
 .spin2 {
+    cursor: pointer;
     margin-top: 15px;
-    width: 100px;
+    width: 110px;
     height: 70px;
+    overflow: hidden;
     border-radius: 5px;
     border: 1px solid black;
     display: flex;

@@ -32,6 +32,7 @@ model List {
 model User {
   id            Int            @id @default(autoincrement())
   img           String
+  imgPublicId   String 
   name          String
   email         String
   Username      String
