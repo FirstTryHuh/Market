@@ -1,6 +1,6 @@
 .Back{
     padding-top: 3rem;
-    background: linear-gradient(to bottom,white,#ffe0c1,white)
+    background: linear-gradient(to bottom,white 80px,#ffe0c1,white)
 }
 
 .item {
@@ -48,7 +48,7 @@
     left: -4.4rem;
     width: 100px;
     height: 100%;
-    background: linear-gradient(to right, rgb(255, 245, 236) 80px, transparent);
+    background: linear-gradient(to right, rgb(255, 255, 255) 80px, transparent);
 }
 
 .Blur2 {
@@ -58,7 +58,7 @@
     right: -4.4rem;
     width: 100px;
     height: 100%;
-    background: linear-gradient(to left, rgb(255, 245, 236) 80px, transparent);
+    background: linear-gradient(to left, rgb(252, 252, 252) 80px, transparent);
 }
 
 .holder2 {
@@ -126,7 +126,7 @@
 
 .image {
     width: 100%;
-    aspect-ratio: 21/20;
+    aspect-ratio: 27/20;
     grid-row: 1 /7;
     grid-column: 1;
 }

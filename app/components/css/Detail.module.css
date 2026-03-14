@@ -4,6 +4,7 @@
     padding-left: 10px;
     padding-bottom: 10px;
     width: 100vw;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: 1fr;
@@ -40,6 +41,7 @@
 .cost {
     display: flex;
     font-size: 1.5rem;
+    width: 100%;
 }
 
 .quantity {
@@ -106,13 +108,14 @@
 }
 
 .icon2 {
+    align-self: flex-end;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #fff;
     width: 40px;
     height: 40px;
-    margin-left: 50px;
+    margin-left: auto;
     border-radius: 50%;
     border: 1px solid;
     cursor: pointer;
@@ -132,7 +135,7 @@
     border-radius: 40px;
     border: 1px solid;
     cursor: pointer;
-    align-self: center;
+    align-self: right;
     justify-self: center;
 }
 

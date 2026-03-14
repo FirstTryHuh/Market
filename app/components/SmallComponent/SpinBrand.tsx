@@ -29,7 +29,7 @@ const SpinBrand = () => {
     function GenImg(item:item, index: number) {
         return (
             <div key={index} className={style.spin2}>
-                <img alt="Logo" src={item.img} loading="lazy" height="64" width="64" />
+                <img alt="Logo" src={item.img} loading="lazy"  width={"100%"} />
                 </div>
         )
     }
