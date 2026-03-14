@@ -104,6 +104,7 @@
     grid-template-columns: repeat(auto-fit,290px)  ;
     grid-template-rows: repeat(auto-fit,245px) 10px 1fr;
     overflow: hidden;
+    justify-content: space-evenly;
 }
 
 .icon {
