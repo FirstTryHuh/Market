@@ -2,7 +2,7 @@ import { prisma } from "@/lib/db"
 import Link from "next/link";
 import style from "../css/Product.module.css"
 
-const formatCompact = (number: any) => { return new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short", maximumFractionDigits: 1 }).format(number).toLowerCase(); };
+const formatCompact = (number: number) => { return new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short", maximumFractionDigits: 1 }).format(number).toLowerCase(); };
 
 interface List {
   id: number;

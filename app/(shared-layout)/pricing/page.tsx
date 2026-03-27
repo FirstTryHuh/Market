@@ -1,6 +1,4 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
-import Head from '../components/Header/header'
-import Foot from '../components/Foot/footer'
 
 const tiers = [
   {
@@ -58,7 +56,6 @@ const tiers = [
 export default function PricingPage() {
   return (
     <div >
-        <Head/>
         <div className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
@@ -123,7 +120,6 @@ export default function PricingPage() {
         </div>
       </div>
       </div>
-      <Foot/>
     </div>
   )
 }

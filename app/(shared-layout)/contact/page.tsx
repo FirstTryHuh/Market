@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import Head from '../components/Header/header'
-import Foot from '../components/Foot/footer'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -28,14 +26,13 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white">
-        <Head/>
       {/* Header */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Contact Us</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </div>
@@ -49,7 +46,7 @@ export default function ContactPage() {
             <div className="lg:col-span-1">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">Get in touch</h2>
               <p className="mt-4 text-base leading-7 text-gray-600">
-                Choose your preferred way to reach us. We're here to help!
+                Choose your preferred way to reach us. We&apos;re here to help!
               </p>
 
               <div className="mt-10 space-y-6">
@@ -193,7 +190,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <Foot/>
     </div>
   )
 }

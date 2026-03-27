@@ -6,8 +6,6 @@ import {
   MagnifyingGlassIcon,
   TruckIcon 
 } from '@heroicons/react/24/outline'
-import Head from '../components/Header/header'
-import Foot from '../components/Foot/footer'
 
 const features = [
   {
@@ -45,7 +43,6 @@ const features = [
 export default function FeaturesPage() {
   return (
     <div className="bg-white">
-      <Head/>
       {/* Header */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -80,7 +77,6 @@ export default function FeaturesPage() {
           </dl>
         </div>
       </div>
-      <Foot/>
     </div>
   )
 }

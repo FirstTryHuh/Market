@@ -44,6 +44,16 @@
     margin-bottom: 1rem;
 }
 
+.SubHead {
+    font-size: 1rem;
+}
+
+.Popular {
+    font-weight: 700;
+    padding-right: 1rem;
+    font-size: 1rem;
+}
+
 .buttons {
     border: 1.5px solid transparent;
     background: linear-gradient(white, white) padding-box,
@@ -104,5 +114,49 @@
         position: absolute;
         visibility: hidden;
     }
+}
 
+@media screen and (width < 768px) {
+    .Head {
+        font-size: 3rem;
+    }
+
+    .SubHead {
+        font-size: 1rem;
+    }
+
+    .Popular {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        font-size: 1.1rem;
+    }
+
+    .Hold {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    .FlexSm {
+        width: 100%;
+    }
+}
+
+@media screen and (width < 480px) {
+    .Head {
+        font-size: 2.2rem;
+    }
+
+    .SubHead {
+        font-size: 0.9rem;
+    }
+
+    .Popular {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        font-size: 1rem;
+    }
 }

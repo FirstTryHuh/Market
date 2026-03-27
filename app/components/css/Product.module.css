@@ -76,6 +76,12 @@
     grid-template-rows: auto;
 }
 
+@media screen and (width < 768px) {
+    .Hold {
+        grid-template-columns: 0 1fr 0;
+    }
+}
+
 .holder3 {
     width: 100%;
     height: fit-content;
@@ -184,6 +190,13 @@
     .Board{
         grid-template-columns: repeat(auto-fill,350px) ;
         grid-template-rows: repeat(auto-fill,286px) 10px 1fr;
+    }
+}
+
+@media screen and (width < 640px) {
+    .Board {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(160px, auto)) 10px 1fr;
     }
 }
 

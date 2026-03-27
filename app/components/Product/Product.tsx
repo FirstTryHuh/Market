@@ -1,4 +1,3 @@
-import { DropdownMenu } from "radix-ui"
 import DropDown from "../SmallComponent/DropDown"
 import FrequentItem from "../SmallComponent/FrequentItem"
 import style  from "../css/Product.module.css"

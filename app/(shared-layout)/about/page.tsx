@@ -1,7 +1,4 @@
 import { UsersIcon, GlobeAltIcon, HeartIcon } from '@heroicons/react/24/outline'
-import Head from '../components/Header/header'
-import Foot from '../components/Foot/footer'
-
 
 const stats = [
   { label: 'Active Users', value: '50K+' },
@@ -48,15 +45,15 @@ const team = [
 
 export default function AboutPage() {
   return (
+    <>
     <div className="bg-white">
-        <Head/>
       {/* Header */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">About Us</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We're on a mission to create the world's most trusted marketplace for everyone.
+              We&apos;re on a mission to create the world&apos;s most trusted marketplace for everyone.
             </p>
           </div>
         </div>
@@ -72,7 +69,7 @@ export default function AboutPage() {
             has grown into a global community of buyers and sellers.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Today, we're proud to serve millions of users worldwide, helping small businesses grow 
+            Today, we&apos;re proud to serve millions of users worldwide, helping small businesses grow 
             and connecting buyers with unique products they love. Our commitment to innovation and 
             customer satisfaction drives everything we do.
           </p>
@@ -138,7 +135,7 @@ export default function AboutPage() {
           ))}
         </ul>
       </div>
-      <Foot/>
     </div>
+    </>
   )
 }
