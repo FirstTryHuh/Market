@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: Ping Supabase
         run: |
-          curl "https://hmwzbvmyirpdvdeuqhdu.supabase.co/rest/v1/YOUR_TABLE_NAME?select=*&limit=1" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
+          curl "https://hmwzbvmyirpdvdeuqhdu.supabase.co/rest/v1/List?select=*&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
